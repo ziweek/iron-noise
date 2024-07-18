@@ -27,7 +27,7 @@
   <br/>
 
   <a href='https://github.com/xinntao/ESRGAN?tab=readme-ov-file'>
-    <img src="https://img.shields.io/badge/OpenAI-whisper-EF2D5E?style=flat-square"/>
+    <img src="https://img.shields.io/badge/OpenAI-Whisper-EF2D5E?style=flat-square"/>
   </a>
   <img src="https://img.shields.io/badge/MLOps-Weights%20&%20Biases-EF2D5E?style=flat-square"/>
   <br/>
