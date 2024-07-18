@@ -25,10 +25,7 @@
     <img src="https://img.shields.io/badge/Paperswithcode-Real%20Time%20Neural%20Voice%20Camouflage-25c2a0?style=flat-square"/>
   </a>
   <br/>
-  
-  <a href='https://github.com/cvlab-columbia/voicecamo'>
-    <img src="https://img.shields.io/badge/cvlab%20columbia-voicecamo-EF2D5E?style=flat-square"/>
-  </a>
+
   <a href='https://github.com/xinntao/ESRGAN?tab=readme-ov-file'>
     <img src="https://img.shields.io/badge/openai-whisper-EF2D5E?style=flat-square"/>
   </a>
