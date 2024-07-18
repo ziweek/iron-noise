@@ -26,8 +26,8 @@
   </a>
   <br/>
 
-  <a href='https://github.com/xinntao/ESRGAN?tab=readme-ov-file'>
-    <img src="https://img.shields.io/badge/OpenAI-Whisper-EF2D5E?style=flat-square"/>
+  <a href='https://github.com/mozilla/DeepSpeech'>
+    <img src="https://img.shields.io/badge/Mozilla-DeepSpeech-EF2D5E?style=flat-square"/>
   </a>
   <img src="https://img.shields.io/badge/MLOps-Weights%20&%20Biases-EF2D5E?style=flat-square"/>
   <br/>
@@ -37,6 +37,7 @@
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
   <br/>
+  
   <img src="https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
   <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white"/>
