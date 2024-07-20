@@ -68,7 +68,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="h-screen w-full select-none flex-col justify-start items-center">
+      <section className="h-screen w-full select-none flex-col justify-start items-center relative">
         <div
           className={`flex h-full w-full flex-col items-center justify-start gap-2 pb-6 pt-2 px-4`}
         >
@@ -91,7 +91,7 @@ export default function Home() {
                   // disableAnimation={true}
                   radius={"none"}
                   fullWidth
-                  className="w-full font-bold col-span-2 h-full drop-shadow-md p-0"
+                  className="w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative"
                   color={buttonOption.isModelActivated ? "primary" : "default"}
                   variant={buttonOption.isModelActivated ? "shadow" : "flat"}
                   onClick={async () => {
@@ -143,7 +143,7 @@ export default function Home() {
                           : "꺼져 있음"}
                       </p>
                     </div>
-                    <div className="z-0 absolute -bottom-6 rounded-sm overflow-clip">
+                    <div className="z-0 fixed bottom-4 rounded-sm overflow-clip">
                       {buttonOption.isModelActivated && (
                         <AudioVisualizer
                           mode={"bars"}
@@ -202,7 +202,7 @@ export default function Home() {
                 selectedKey={selected}
                 onSelectionChange={(key) => setSelected(key)}
                 radius={"none"}
-                classNames={{ cursor: "bg-blue-50" }}
+                classNames={{ cursor: "bg-[#E6E6E7]" }}
               >
                 <Tab key="부가 기능" title="부가 기능">
                   <div>
