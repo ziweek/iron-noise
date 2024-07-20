@@ -54,18 +54,19 @@ export default function Home() {
 
   return (
     <>
-      <section className="h-screen w-full select-none flex-col">
+      <section className="h-screen w-full select-none flex-col justify-start items-center">
         <div
-          className={`flex h-full w-full flex-col items-center justify-start gap-4 pb-12 pt-2  px-4`}
+          className={`flex h-full w-full flex-col items-center justify-start gap-2 pb-6 pt-2 px-4`}
         >
           <Header></Header>
-          <div className="w-full h-full grid-cols-1 grid-rows-2 grid gap-y-4">
+          <div className="w-full h-full grid-cols-1 grid-rows-5 grid gap-y-4">
             {selected == "지시 사항" ? (
               <Button
+                radius={"none"}
                 fullWidth
-                className="w-full font-bold text-xl col-span-2 h-full"
+                className="w-full font-bold col-span-2 h-full row-span-2 drop-shadow-md"
                 color={buttonOption.isModelActivated ? "primary" : "default"}
-                variant={buttonOption.isModelActivated ? "shadow" : "faded"}
+                variant={buttonOption.isModelActivated ? "shadow" : "flat"}
                 onClick={async () => {
                   await setButtonOption({
                     ...buttonOption,
@@ -77,35 +78,35 @@ export default function Home() {
                 <div className="flex flex-col">
                   <div
                     className={`${
-                      mobile ? "h-[220px]" : "h-[300px]"
+                      mobile ? "h-[150px]" : "h-[300px]"
                     } flex  flex-col justify-center overflow-y-clip`}
                   >
                     {buttonOption.isModelActivated ? (
                       <LottieSecurityCheck
-                        width={300}
-                        height={300}
+                        width={200}
+                        height={200}
                         color="blue"
                         play
                         loop
                       ></LottieSecurityCheck>
                     ) : (
                       <LottieSecurityCheck
-                        width={300}
-                        height={300}
+                        width={200}
+                        height={200}
                         color="red"
                       ></LottieSecurityCheck>
                     )}
                   </div>
                   <div className="flex flex-col">
-                    <p className="text-lg">AI 도청 교란 모델</p>
-                    <p className="text-xl">
+                    <p className="text-md">AI 도청 교란 모델</p>
+                    <p className="text-lg">
                       {buttonOption.isModelActivated ? "동작 중" : "꺼져 있음"}
                     </p>
                   </div>
                 </div>
               </Button>
             ) : (
-              <div className="flex h-full min-h-[300px] w-full">
+              <div className="flex h-full w-full row-span-2">
                 <Bar
                   data={{
                     labels: ["문서 요약", "전체 평가"],
@@ -138,7 +139,7 @@ export default function Home() {
                 ></Bar>
               </div>
             )}
-            <div className="h-fit w-full">
+            <div className="h-fit w-full row-span-3">
               <Tabs
                 aria-label="Options"
                 fullWidth
@@ -146,31 +147,30 @@ export default function Home() {
                 size={"lg"}
                 selectedKey={selected}
                 onSelectionChange={(key) => setSelected(key)}
-                classNames={{ tabList: "h-[60px]", tab: "h-[60px]" }}
+                classNames={{ tabList: "", tab: "" }}
+                radius={"none"}
               >
                 <Tab key="지시 사항" title="지시 사항">
                   <div>
                     <div className="flex flex-col gap-4 w-full items-center overflow-y-scroll">
-                      {[1, 2, 3, "보안 측정하기", 1, 2, 3, "보안 측정하기"].map(
-                        (e, i) => {
-                          return (
-                            <Button
-                              key={i}
-                              variant={"light"}
-                              className="h-[50px] text-sm"
-                              fullWidth
-                            >
-                              동작 1
-                            </Button>
-                          );
-                        }
-                      )}
+                      {[1, 2, 3, "보안 측정하기"].map((e, i) => {
+                        return (
+                          <Button
+                            key={i}
+                            variant={"light"}
+                            className="h-[40px] text-sm"
+                            fullWidth
+                          >
+                            동작 1
+                          </Button>
+                        );
+                      })}
                     </div>
                   </div>
                 </Tab>
                 <Tab key="통계 요약" title="통계 요약">
                   <div className="flex flex-col gap-4 w-full items-center">
-                    {[1, 2, 3, "보안 측정하기", 5, 6, 7].map((e, i) => {
+                    {[1, 2, 3, "보안 측정하기"].map((e, i) => {
                       return (
                         <div
                           key={i}
@@ -178,13 +178,13 @@ export default function Home() {
                         >
                           <p
                             key={i}
-                            className="h-[50px] text-sm flex flex-col justify-center"
+                            className="h-[40px] text-sm flex flex-col justify-center"
                           >
                             동작 1
                           </p>
                           <p
                             key={i}
-                            className="h-[50px] text-sm flex flex-col justify-center"
+                            className="h-[40px] text-sm flex flex-col justify-center"
                           >
                             동작 1
                           </p>
