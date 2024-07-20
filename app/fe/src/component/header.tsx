@@ -12,34 +12,32 @@ export default function Header(props: any) {
 
   return (
     <section
-      className={`top-0 z-50 min-h-[60px] w-full pb-6 ${
-        props.isFixed ? "" : ""
-      }`}
+      className={`top-0 z-50 h-[40px] w-full ${props.isFixed ? "" : ""}`}
     >
-      <div className="flex h-[60px] w-full select-none flex-row gap-1 justify-between items-center">
+      <div className="flex h-[40px] w-full select-none flex-row gap-1 justify-between items-center">
         <div className="flex flex-row">
           <div
             className={`h-[40px] w-[30px] flex flex-col justify-center overflow-x-clip`}
           >
             {queryButtonOption.data?.isModelActivated ? (
               <LottieSecurityCheck
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 color="blue"
                 play
                 loop
               ></LottieSecurityCheck>
             ) : (
               <LottieSecurityCheck
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 color="red"
               ></LottieSecurityCheck>
             )}
           </div>
-          <IconLogo fill="#000" width={100}></IconLogo>
+          <IconLogo fill="#000" width={75}></IconLogo>
         </div>
-        <div className="flex h-fit flex-row gap-4">
+        <div className="flex h-fit flex-row gap-2">
           <Button
             isIconOnly
             color={"primary"}
@@ -49,7 +47,7 @@ export default function Header(props: any) {
               window.open("https://github.com/ziweek");
             }}
           >
-            <IconGithub fill="#1D4A83" width={"30px"}></IconGithub>
+            <IconGithub fill="#1D4A83" width={"25px"}></IconGithub>
           </Button>
           <Button
             isIconOnly
@@ -60,7 +58,7 @@ export default function Header(props: any) {
               window.open("https://www.linkedin.com/in/jiuk-kim-42248325a/");
             }}
           >
-            <IconLinkedIn fill="#1D4A83" width={"30px"}></IconLinkedIn>
+            <IconLinkedIn fill="#1D4A83" width={"25px"}></IconLinkedIn>
           </Button>
         </div>
       </div>

@@ -82,10 +82,11 @@ export default function Home() {
               <IconLogo width={mobile ? 150 : 200} fill="#fff"></IconLogo>
               <p
                 className={`text-center font-bold text-white ${
-                  mobile ? "text-sm" : "text-md"
+                  mobile ? "text-md" : "text-md"
                 }`}
               >
-                인공지능 도청을 교란하는, 딥러닝 기반 실시간 음성 위장 체계
+                인공지능 도청을 교란하는,{mobile && <br></br>}딥러닝 기반 실시간
+                음성 위장 체계
               </p>
             </div>
             {/*  */}
