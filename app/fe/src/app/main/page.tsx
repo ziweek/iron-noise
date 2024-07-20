@@ -102,7 +102,7 @@ export default function Home() {
                     await queryButtonOption.refetch();
                   }}
                 >
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center relative">
                     {/* <div className="z-0 fixed top-4 rounded-lg overflow-clip -rotate-180">
                       {buttonOption.isModelActivated && (
                         <AudioVisualizer
@@ -143,7 +143,7 @@ export default function Home() {
                           : "꺼져 있음"}
                       </p>
                     </div>
-                    <div className="z-0 fixed bottom-4 rounded-lg overflow-clip">
+                    <div className="z-0 fixed bottom-4 rounded-sm overflow-clip">
                       {buttonOption.isModelActivated && (
                         <AudioVisualizer
                           mode={"bars"}
@@ -167,7 +167,7 @@ export default function Home() {
                         label: "Original Sound",
                         data: [65, 59, 80, 81, 56, 55, 40],
                         // fill: true,
-                        borderWidth: 5,
+                        borderWidth: 3,
                         borderColor: "#00000050",
                         tension: 0.3,
                         backgroundColor: "#00000050",
@@ -175,7 +175,7 @@ export default function Home() {
                       {
                         label: "Predictive Attack",
                         data: [55, 40, 65, 59, 80, 81, 56],
-                        borderWidth: 5,
+                        borderWidth: 3,
                         borderColor: "#005BC450",
                         tension: 0.3,
                         backgroundColor: "#005BC450",
@@ -202,6 +202,7 @@ export default function Home() {
                 selectedKey={selected}
                 onSelectionChange={(key) => setSelected(key)}
                 radius={"none"}
+                classNames={{ cursor: "bg-blue-50" }}
               >
                 <Tab key="부가 기능" title="부가 기능">
                   <div>
@@ -251,6 +252,8 @@ export default function Home() {
                   <div className="flex flex-col gap-4 w-full items-center">
                     {[
                       { text: "전체 발화 시간", value: 421 },
+                      { text: "식별된 발화 시간", value: 421 },
+                      { text: "방어한 발화 시간", value: 421 },
                       { text: "식발한 단어 수", value: 421 },
                       { text: "ASR 방어에 성공한 글자", value: 421 },
                       { text: "ASR 방어에 성공한 단어", value: 318 },
@@ -259,7 +262,7 @@ export default function Home() {
                       return (
                         <div
                           key={i}
-                          className="flex flex-row w-full justify-between items-center h-[50px]"
+                          className="flex flex-row w-full justify-between items-center h-[30px]"
                         >
                           <p
                             key={i}
