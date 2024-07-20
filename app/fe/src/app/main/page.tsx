@@ -143,7 +143,7 @@ export default function Home() {
                           : "꺼져 있음"}
                       </p>
                     </div>
-                    <div className="z-0 fixed bottom-4 rounded-sm overflow-clip">
+                    <div className="z-0 absolute -bottom-6 rounded-sm overflow-clip">
                       {buttonOption.isModelActivated && (
                         <AudioVisualizer
                           mode={"bars"}
