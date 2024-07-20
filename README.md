@@ -67,7 +67,7 @@
     <img src="https://img.shields.io/badge/튜토리얼-Google%20Colab-F9AB00?style=flat-square"/>
   </a>
   <a href='https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=132'>
-    <img src="https://img.shields.io/badge/데이터셋-AiHub-FF5A5F?style=flat-square"/>
+    <img src="https://img.shields.io/badge/데이터셋-AiHub%20회의음성-FF5A5F?style=flat-square"/>
   </a>
 </p>
 
