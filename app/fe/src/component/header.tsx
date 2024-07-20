@@ -1,5 +1,10 @@
 import { Button } from "@nextui-org/react";
-import { IconGithub, IconLinkedIn, IconLogo } from "./common/icons";
+import {
+  IconGithub,
+  IconLinkedIn,
+  IconLogo,
+  IconSetting,
+} from "./common/icons";
 import { LottieSecurityCheck } from "./common/lotties";
 import { useQuery } from "@tanstack/react-query";
 
@@ -47,7 +52,7 @@ export default function Header(props: any) {
               window.open("https://github.com/ziweek");
             }}
           >
-            <IconGithub fill="#1D4A83" width={"25px"}></IconGithub>
+            <IconGithub fill="#1D4A83" width={"20px"}></IconGithub>
           </Button>
           <Button
             isIconOnly
@@ -58,8 +63,19 @@ export default function Header(props: any) {
               window.open("https://www.linkedin.com/in/jiuk-kim-42248325a/");
             }}
           >
-            <IconLinkedIn fill="#1D4A83" width={"25px"}></IconLinkedIn>
+            <IconLinkedIn fill="#1D4A83" width={"20px"}></IconLinkedIn>
           </Button>
+          {/* <Button
+            isIconOnly
+            variant={"light"}
+            color={"primary"}
+            size={"sm"}
+            onPress={() => {
+              window.open("https://www.linkedin.com/in/jiuk-kim-42248325a/");
+            }}
+          >
+            <IconSetting fill="#1D4A83" width={"25px"}></IconSetting>
+          </Button> */}
         </div>
       </div>
     </section>
