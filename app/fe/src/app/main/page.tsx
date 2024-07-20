@@ -3,8 +3,8 @@
 import { LottieSecurityCheck } from "@/component/common/lotties";
 import Header from "@/component/header";
 import { useIsMobile } from "@/hook/useMediaQuery";
-import { Tabs, Tab, Button } from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { Tabs, Tab, Button, Accordion, AccordionItem } from "@nextui-org/react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import toast, { Toaster } from "react-hot-toast";
 import { AudioVisualizer } from "ts-audio-visualizer";
@@ -42,6 +42,7 @@ export default function Home() {
     isModelActivated: false,
   });
   const [selected, setSelected] = useState<any>("부가 기능");
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const queryButtonOption = useQuery<any>({
     queryKey: ["buttonOption"],
@@ -50,12 +51,12 @@ export default function Home() {
   });
 
   useEffect(() => {
-    // toast(
-    //   "👏 안녕하세요!\n\n본 데모 버전에서는 아이디와 비밀번호 없이 로그인하실 수 있습니다.",
-    //   {
-    //     className: "leading-relaxed text-center font-bold",
-    //   }
-    // );
+    toast(
+      "👏 안녕하세요!\n\n본 데모 버전에서는 아이디와 비밀번호 없이 로그인하실 수 있습니다.",
+      {
+        className: "leading-relaxed text-center font-bold",
+      }
+    );
     const checkResize = () => {
       if (isMobile) {
         setMobile(true);
@@ -88,13 +89,17 @@ export default function Home() {
                   )}
                 </div> */}
                 <Button
+                  ref={buttonRef}
                   // disableAnimation={true}
                   radius={"none"}
                   fullWidth
-                  className="w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative"
+                  className={`w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative ${
+                    buttonOption.isModelActivated ? "" : "bg-red-50"
+                  }`}
                   color={buttonOption.isModelActivated ? "primary" : "default"}
                   variant={buttonOption.isModelActivated ? "shadow" : "flat"}
                   onClick={async () => {
+                    console.log(buttonRef.current);
                     await setButtonOption({
                       ...buttonOption,
                       isModelActivated: !buttonOption.isModelActivated,
@@ -143,7 +148,7 @@ export default function Home() {
                           : "꺼져 있음"}
                       </p>
                     </div>
-                    <div className="z-0 fixed bottom-4 rounded-sm overflow-clip">
+                    <div className="absolute -bottom-6 z-0 rounded-sm overflow-clip">
                       {buttonOption.isModelActivated && (
                         <AudioVisualizer
                           mode={"bars"}
@@ -232,8 +237,8 @@ export default function Home() {
                         return (
                           <Button
                             key={i}
-                            variant={"light"}
-                            className="h-[50px] text-sm"
+                            variant={"flat"}
+                            className="h-[60px] text-sm"
                             fullWidth
                             size={"lg"}
                           >
