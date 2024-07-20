@@ -55,14 +55,19 @@
   <a href='https://www.canva.com/design/DAF6gh68bZ4/YeS-FN9gsbZpPdRnq52BXQ/view?utm_content=DAF6gh68bZ4&utm_campaign=designshare&utm_medium=link&utm_source=editor'>
     <img src="https://img.shields.io/badge/소개자료-Canva-00C4CC?style=flat-square"/>
   </a>
+    <br/>
   <a href='https://desirable-sea.vercel.app/'>
     <img src="https://img.shields.io/badge/프로덕트-Vercel-000000?style=flat-square"/>
   </a>
   <a href='https://goor.me/edkv2g6bKZt7nopy6'>
-    <img src="https://img.shields.io/badge/AI%20시연-HuggingFace-FFD21E?style=flat-square"/>
+    <img src="https://img.shields.io/badge/모델%20시연-HuggingFace-FFD21E?style=flat-square"/>
   </a>
-  <a href='https://colab.research.google.com/drive/13-VZyx3LiYPRS8aw-AcMSBK0Z4--TF2j?usp=sharing'>
+    <br/>
+  <a href='https://colab.research.google.com/drive/11qoO4fd5s9l_FnF8a1dCT6uK3tWLSlt2?usp=sharing'>
     <img src="https://img.shields.io/badge/튜토리얼-Google%20Colab-F9AB00?style=flat-square"/>
+  </a>
+  <a href='https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=132'>
+    <img src="https://img.shields.io/badge/데이터셋-AiHub-FF5A5F?style=flat-square"/>
   </a>
 </p>
 
