@@ -14,6 +14,7 @@
     "@tanstack/react-query-devtools": "^5.51.9",
     "@types/aos": "^3.0.7",
     "@types/react-responsive": "^8.0.8",
+    "@wavesurfer/react": "^1.0.7",
     "aos": "^2.3.4",
     "chart.js": "^4.4.3",
     "devtools-detector": "^2.0.20",
@@ -30,7 +31,9 @@
     "react-hot-toast": "^2.4.1",
     "react-lottie-player": "^2.0.0",
     "react-responsive": "^10.0.0",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "ts-audio-visualizer": "^1.0.4",
+    "wavesurfer.js": "^7.8.2"
   },
   "devDependencies": {
     "@types/node": "^20",
