@@ -1,10 +1,5 @@
 import { Button } from "@nextui-org/react";
-import {
-  IconGithub,
-  IconLinkedIn,
-  IconLogo,
-  IconSetting,
-} from "./common/icons";
+import { IconGithub, IconLinkedIn, IconLogo } from "./common/icons";
 import { LottieSecurityCheck } from "./common/lotties";
 import { useQuery } from "@tanstack/react-query";
 
@@ -40,7 +35,7 @@ export default function Header(props: any) {
               ></LottieSecurityCheck>
             )}
           </div>
-          <IconLogo fill="#000" width={110}></IconLogo>
+          <IconLogo fill="#000" width={100}></IconLogo>
         </div>
         <div className="flex h-fit flex-row gap-2">
           <Button
