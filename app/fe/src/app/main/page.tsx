@@ -416,33 +416,47 @@ export default function Home() {
               <div className="flex h-full w-full row-span-2">
                 <Line
                   data={{
-                    labels: [1, 2, 3, 4, 5],
+                    labels: [1, 2, 3, 4, 5, 6, 7],
                     datasets: [
-                      {
-                        label: "Original Sound",
-                        data: [65, 59, 80, 81, 56, 55, 40],
-                        // fill: true,
-                        borderWidth: 3,
-                        borderColor: "#00000050",
-                        tension: 0.3,
-                        backgroundColor: "#00000050",
-                      },
+                      // {
+                      //   label: "Original Sound",
+                      //   data: [65, 59, 80, 81, 56, 55, 40],
+                      //   // fill: true,
+                      //   borderWidth: 3,
+                      //   borderColor: "#00000050",
+                      //   tension: 0.3,
+                      //   backgroundColor: "#00000050",
+                      // },
                       {
                         label: "Predictive Attack",
                         data: [55, 40, 65, 59, 80, 81, 56],
-                        borderWidth: 3,
-                        borderColor: "#005BC450",
+                        borderWidth: 5,
+                        borderColor: "#005BC475",
                         tension: 0.3,
+                        fill: true,
                         backgroundColor: "#005BC450",
                       },
                     ],
                   }}
                   options={{
+                    elements: { point: { radius: 0 } },
                     spanGaps: 20,
                     maintainAspectRatio: false,
                     responsive: true,
                     animation: {
                       duration: 500,
+                    },
+                    plugins: {
+                      legend: {
+                        display: true,
+                      },
+                    },
+                    scales: {
+                      x: {
+                        grid: { lineWidth: 3 },
+                        ticks: { display: false },
+                      },
+                      y: { display: false },
                     },
                   }}
                 ></Line>
