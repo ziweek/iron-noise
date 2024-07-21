@@ -1,0 +1,11 @@
+hydra-core
+librosa
+levenshtein
+pytorch-lightning>=1.7.0
+sox
+torch
+torchaudio
+tqdm
+omegaconf
+numpy
+transformers
