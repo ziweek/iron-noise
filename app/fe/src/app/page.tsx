@@ -75,7 +75,7 @@ export default function Home() {
     <>
       <section className="mx-auto h-full min-h-full w-screen select-none overflow-x-clip bg-white dark:bg-black">
         {/* 1. 프로젝트 소개  */}
-        <div className="mx-auto flex h-screen flex-col items-center justify-center bg-cover bg-center bg-[url('../../public/image/background-pattern.jpg')]">
+        <div className="mx-auto flex h-screen flex-col items-center justify-center bg-cover bg-center bg-[url('../../public/image/background-pattern.jpg')] bg-blend-darken bg-black/30">
           <div className="z-20 flex w-full flex-col items-center justify-center space-y-8">
             {/* 소개 텍스트 */}
             <div className="flex w-full flex-col items-center justify-center gap-2">
@@ -310,7 +310,9 @@ export default function Home() {
                   onPressEnd={() => {
                     setIndexOfPressedCard(undefined);
                   }}
-                  className="h-[300px] w-full bg-cover bg-center p-2 bg-blend-darken"
+                  className={`${
+                    mobile ? "h-[150px]" : "h-[300px]"
+                  } w-full bg-cover bg-center p-2 bg-blend-darken`}
                   shadow={"sm"}
                   onPress={() => {
                     console.log(11);
@@ -433,7 +435,7 @@ export default function Home() {
                     setIndexOfPressedCard(undefined);
                   }}
                   className={`${
-                    mobile ? "h-[300px]" : "h-[400px]"
+                    mobile ? "h-[150px]" : "h-[300px]"
                   } w-full border-1 bg-cover bg-center bg-blend-darken shadow-black`}
                   shadow={"lg"}
                   onPress={() => {
@@ -740,7 +742,7 @@ export default function Home() {
         </div>
         <Footer
           isFixed
-          title={"철벽소리"}
+          title={"아이언노이즈"}
           subtitle={"제3회 육군 인공지능 아이디어 공모전"}
         ></Footer>
       </section>

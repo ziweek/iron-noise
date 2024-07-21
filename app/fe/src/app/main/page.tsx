@@ -3,7 +3,17 @@
 import { LottieSecurityCheck } from "@/component/common/lotties";
 import Header from "@/component/header";
 import { useIsMobile } from "@/hook/useMediaQuery";
-import { Tabs, Tab, Button, Accordion, AccordionItem } from "@nextui-org/react";
+import {
+  Tabs,
+  Tab,
+  Button,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Tooltip,
+} from "@nextui-org/react";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import toast, { Toaster } from "react-hot-toast";
@@ -43,6 +53,18 @@ export default function Home() {
   });
   const [selected, setSelected] = useState<any>("부가 기능");
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const [modalOption, setModalOption] = useState({
+    isTutorialOpen: true,
+    tutorialContentIndex: 0,
+    tutorialContent: [
+      { title: "안녕하세요!", desription: "", image: "" },
+      { title: "도청 방지 모델!", desription: "", image: "" },
+      { title: "부가 기능!", desription: "", image: "" },
+      { title: "통계 요약!", desription: "", image: "" },
+    ],
+    isModalOpen: false,
+    buttonSelected: "",
+  });
 
   const queryButtonOption = useQuery<any>({
     queryKey: ["buttonOption"],
@@ -51,12 +73,12 @@ export default function Home() {
   });
 
   useEffect(() => {
-    toast(
-      "👏 안녕하세요!\n\n본 데모 버전에서는 아이디와 비밀번호 없이 로그인하실 수 있습니다.",
-      {
-        className: "leading-relaxed text-center font-bold",
-      }
-    );
+    // toast(
+    //   "👏 안녕하세요!\n\n본 데모 버전에서는 아이디와 비밀번호 없이 로그인하실 수 있습니다.",
+    //   {
+    //     className: "leading-relaxed text-center font-bold",
+    //   }
+    // );
     const checkResize = () => {
       if (isMobile) {
         setMobile(true);
@@ -71,7 +93,7 @@ export default function Home() {
     <>
       <section className="h-screen w-full select-none flex-col justify-start items-center relative">
         <div
-          className={`flex h-full w-full flex-col items-center justify-start gap-2 pb-6 pt-2 px-4`}
+          className={`flex h-full w-full flex-col items-center justify-start gap-2 pb-6 pt-2 px-4 max-w-[600px] mx-auto`}
         >
           <Header></Header>
           <div className="w-full h-full grid-cols-1 grid-rows-5 grid gap-y-8">
@@ -88,27 +110,40 @@ export default function Home() {
                     />
                   )}
                 </div> */}
-                <Button
-                  ref={buttonRef}
-                  // disableAnimation={true}
-                  radius={"none"}
-                  fullWidth
-                  className={`w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative ${
-                    buttonOption.isModelActivated ? "" : "bg-red-50"
-                  }`}
-                  color={buttonOption.isModelActivated ? "primary" : "default"}
-                  variant={buttonOption.isModelActivated ? "shadow" : "flat"}
-                  onClick={async () => {
-                    console.log(buttonRef.current);
-                    await setButtonOption({
-                      ...buttonOption,
-                      isModelActivated: !buttonOption.isModelActivated,
-                    });
-                    await queryButtonOption.refetch();
-                  }}
+                <Tooltip
+                  content={"AI 도청 방지 모델을 동작하는 버튼입니다."}
+                  showArrow
+                  isOpen={
+                    modalOption.isTutorialOpen &&
+                    modalOption.tutorialContentIndex == 1
+                  }
+                  placement={"bottom"}
+                  color={"primary"}
+                  size={"lg"}
                 >
-                  <div className="flex flex-col items-center relative">
-                    {/* <div className="z-0 fixed top-4 rounded-lg overflow-clip -rotate-180">
+                  <Button
+                    ref={buttonRef}
+                    // disableAnimation={true}
+                    radius={"none"}
+                    fullWidth
+                    className={`w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative ${
+                      buttonOption.isModelActivated ? "" : "bg-red-50"
+                    }`}
+                    color={
+                      buttonOption.isModelActivated ? "primary" : "default"
+                    }
+                    variant={buttonOption.isModelActivated ? "shadow" : "flat"}
+                    onClick={async () => {
+                      console.log(buttonRef.current);
+                      await setButtonOption({
+                        ...buttonOption,
+                        isModelActivated: !buttonOption.isModelActivated,
+                      });
+                      await queryButtonOption.refetch();
+                    }}
+                  >
+                    <div className="flex flex-col items-center relative justify-center">
+                      {/* <div className="z-0 fixed top-4 rounded-lg overflow-clip -rotate-180">
                       {buttonOption.isModelActivated && (
                         <AudioVisualizer
                           mode={"bars"}
@@ -119,48 +154,47 @@ export default function Home() {
                         />
                       )}
                     </div> */}
-                    <div
-                      className={`${
-                        mobile ? "h-[150px]" : "h-[300px]"
-                      } flex  flex-col justify-center overflow-y-clip`}
-                    >
-                      {buttonOption.isModelActivated ? (
-                        <LottieSecurityCheck
-                          width={200}
-                          height={200}
-                          color="blue"
-                          play
-                          loop
-                        ></LottieSecurityCheck>
-                      ) : (
-                        <LottieSecurityCheck
-                          width={200}
-                          height={200}
-                          color="red"
-                        ></LottieSecurityCheck>
-                      )}
+                      <div
+                        className={`h-[150px] flex  flex-col justify-center overflow-y-clip`}
+                      >
+                        {buttonOption.isModelActivated ? (
+                          <LottieSecurityCheck
+                            width={200}
+                            height={200}
+                            color="blue"
+                            play
+                            loop
+                          ></LottieSecurityCheck>
+                        ) : (
+                          <LottieSecurityCheck
+                            width={200}
+                            height={200}
+                            color="red"
+                          ></LottieSecurityCheck>
+                        )}
+                      </div>
+                      <div className="flex flex-col z-50">
+                        <p className="text-md">AI 도청 방지 모델</p>
+                        <p className="text-lg">
+                          {buttonOption.isModelActivated
+                            ? "동작 중"
+                            : "꺼져 있음"}
+                        </p>
+                      </div>
+                      <div className="absolute -bottom-4 z-0 rounded-sm overflow-clip">
+                        {buttonOption.isModelActivated && (
+                          <AudioVisualizer
+                            mode={"bars"}
+                            height="30px"
+                            width="100%"
+                            bgColor="#005BC4"
+                            barColor="#fff"
+                          />
+                        )}
+                      </div>
                     </div>
-                    <div className="flex flex-col z-50">
-                      <p className="text-md">AI 도청 방지 모델</p>
-                      <p className="text-lg">
-                        {buttonOption.isModelActivated
-                          ? "동작 중"
-                          : "꺼져 있음"}
-                      </p>
-                    </div>
-                    <div className="absolute -bottom-6 z-0 rounded-sm overflow-clip">
-                      {buttonOption.isModelActivated && (
-                        <AudioVisualizer
-                          mode={"bars"}
-                          height="30px"
-                          width="100%"
-                          bgColor="#005BC4"
-                          barColor="#fff"
-                        />
-                      )}
-                    </div>
-                  </div>
-                </Button>
+                  </Button>
+                </Tooltip>
               </div>
             ) : (
               <div className="flex h-full w-full row-span-2">
@@ -209,7 +243,24 @@ export default function Home() {
                 radius={"none"}
                 classNames={{ cursor: "bg-[#E6E6E7]" }}
               >
-                <Tab key="부가 기능" title="부가 기능">
+                <Tab
+                  key="부가 기능"
+                  title={
+                    <Tooltip
+                      content={"부가 기능입니다."}
+                      showArrow
+                      isOpen={
+                        modalOption.isTutorialOpen &&
+                        modalOption.tutorialContentIndex == 2
+                      }
+                      placement={"bottom"}
+                      color={"primary"}
+                      size={"lg"}
+                    >
+                      <p>부가 기능</p>
+                    </Tooltip>
+                  }
+                >
                   <div>
                     <div className="flex flex-col gap-4 w-full items-center overflow-y-scroll">
                       {[
@@ -241,6 +292,13 @@ export default function Home() {
                             className="h-[60px] text-sm"
                             fullWidth
                             size={"lg"}
+                            onPress={() => {
+                              setModalOption({
+                                ...modalOption,
+                                isModalOpen: true,
+                                buttonSelected: e.text,
+                              });
+                            }}
                           >
                             <div className="w-full h-full flex flex-row justify-between items-center font-bold">
                               <div>{e.icon}</div>
@@ -253,7 +311,24 @@ export default function Home() {
                     </div>
                   </div>
                 </Tab>
-                <Tab key="통계 요약" title="통계 요약">
+                <Tab
+                  key="통계 요약"
+                  title={
+                    <Tooltip
+                      content={"통계 요약입니다."}
+                      showArrow
+                      isOpen={
+                        modalOption.isTutorialOpen &&
+                        modalOption.tutorialContentIndex == 3
+                      }
+                      placement={"bottom"}
+                      color={"primary"}
+                      size={"lg"}
+                    >
+                      <p>통계 요약</p>
+                    </Tooltip>
+                  }
+                >
                   <div className="flex flex-col gap-4 w-full items-center">
                     {[
                       { text: "전체 발화 시간", value: 421 },
@@ -291,6 +366,134 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Toaster></Toaster>
+      <Modal
+        isOpen={modalOption.isModalOpen}
+        size={mobile ? "full" : "2xl"}
+        placement={"bottom"}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                {modalOption.buttonSelected}
+              </ModalHeader>
+              <ModalBody>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Magna exercitation reprehenderit magna aute tempor cupidatat
+                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
+                  aliqua enim laboris do dolor eiusmod. Et mollit incididunt
+                  nisi consectetur esse laborum eiusmod pariatur proident Lorem
+                  eiusmod et. Culpa deserunt nostrud ad veniam.
+                </p>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  color="danger"
+                  variant="light"
+                  onPress={() => {
+                    setModalOption({ ...modalOption, isModalOpen: false });
+                  }}
+                >
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+      <Modal isOpen={modalOption.isTutorialOpen} placement={"bottom"}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                {
+                  modalOption.tutorialContent[modalOption.tutorialContentIndex]
+                    .title
+                }
+              </ModalHeader>
+              <ModalBody>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  color="danger"
+                  variant="light"
+                  onPress={() => {
+                    if (modalOption.tutorialContentIndex != 0) {
+                      setModalOption({
+                        ...modalOption,
+                        tutorialContentIndex:
+                          modalOption.tutorialContentIndex - 1,
+                      });
+                    }
+                  }}
+                  disabled={modalOption.tutorialContentIndex == 0}
+                >
+                  이전으로
+                </Button>
+                <Button
+                  color={"default"}
+                  variant="light"
+                  onPress={() => {
+                    setModalOption({ ...modalOption, isModalOpen: false });
+                  }}
+                  disabled={modalOption.tutorialContentIndex == 0}
+                >
+                  넘어가기
+                </Button>
+                <Button
+                  color="primary"
+                  onPress={() => {
+                    if (
+                      modalOption.tutorialContentIndex !=
+                      modalOption.tutorialContent.length - 1
+                    ) {
+                      setModalOption({
+                        ...modalOption,
+                        tutorialContentIndex:
+                          modalOption.tutorialContentIndex + 1,
+                      });
+                    } else {
+                      setModalOption({
+                        ...modalOption,
+                        isTutorialOpen: false,
+                      });
+                    }
+                  }}
+                  disabled={
+                    modalOption.tutorialContentIndex ==
+                    modalOption.tutorialContent.length - 1
+                  }
+                >
+                  {modalOption.tutorialContentIndex !=
+                  modalOption.tutorialContent.length - 1
+                    ? "다음으로"
+                    : "시작하기"}
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </>
   );
 }
