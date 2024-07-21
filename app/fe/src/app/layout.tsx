@@ -20,7 +20,7 @@ const nanumSquareNeo = localFont({
 
 export const metadata: Metadata = {
   title:
-    "철벽소리 | 인공지능 도청을 교란하는, 딥러닝 기반 실시간 음성 위장 체계",
+    "아이언노이즈 | 인공지능 도청을 교란하는, 딥러닝 기반 실시간 음성 위장 체계",
   description: "인공지능 도청을 교란하는, 딥러닝 기반 실시간 음성 위장 체계",
   viewport: {
     width: "device-width",
@@ -48,10 +48,10 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
-        <meta name="application-name" content="철벽소리" />
+        <meta name="application-name" content="" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="철벽소리" />
+        <meta name="apple-mobile-web-app-title" content="아이언노이즈" />
         <meta
           name="description"
           content="인공지능 도청을 교란하는, 딥러닝 기반 실시간 음성 위장 체계"

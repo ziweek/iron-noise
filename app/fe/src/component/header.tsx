@@ -40,7 +40,7 @@ export default function Header(props: any) {
               ></LottieSecurityCheck>
             )}
           </div>
-          <IconLogo fill="#000" width={75}></IconLogo>
+          <IconLogo fill="#000" width={110}></IconLogo>
         </div>
         <div className="flex h-fit flex-row gap-2">
           <Button
@@ -52,7 +52,7 @@ export default function Header(props: any) {
               window.open("https://github.com/ziweek");
             }}
           >
-            <IconGithub fill="#1D4A83" width={"20px"}></IconGithub>
+            <IconGithub fill="#000" width={"20px"}></IconGithub>
           </Button>
           <Button
             isIconOnly
@@ -63,7 +63,7 @@ export default function Header(props: any) {
               window.open("https://www.linkedin.com/in/jiuk-kim-42248325a/");
             }}
           >
-            <IconLinkedIn fill="#1D4A83" width={"20px"}></IconLinkedIn>
+            <IconLinkedIn fill="#000" width={"20px"}></IconLinkedIn>
           </Button>
           {/* <Button
             isIconOnly
