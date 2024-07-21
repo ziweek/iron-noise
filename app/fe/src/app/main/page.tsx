@@ -48,23 +48,20 @@ ChartJS.register(
 export default function Home() {
   const isMobile = useIsMobile();
   const [mobile, setMobile] = useState<boolean>(false);
-  const [buttonOption, setButtonOption] = useState<any>({
-    isModelActivated: false,
-  });
   const [selected, setSelected] = useState<any>("부가 기능");
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [modalOption, setModalOption] = useState({
-    isTutorialOpen: true,
-    tutorialContentIndex: 0,
-    tutorialContent: [
+  const [buttonOption, setButtonOption] = useState<any>({
+    isModelActivated: false,
+    buttonContentIndex: 0,
+    buttonContent: [
       {
-        title: "안녕하세요!",
+        text: "음성 보안 이해",
+        icon: <IconManual width={35} fill="#000"></IconManual>,
         desription: (
-          <div className="gap-y-8 flex flex-col h-full leading-loose">
+          <div className="space-y-4 leading-loose">
             <h1 className="font-bold">
-              ASR 음성 인식과 도청 활용 방법 튜토리얼
+              ASR(Auto Speech Recognition) 음성 인식과 도청으로의 활용가능성
             </h1>
-
             <p>
               자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
               텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
@@ -74,7 +71,6 @@ export default function Home() {
               기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
               다양한 분야에서 널리 사용되고 있습니다.
             </p>
-
             <p>
               ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
               내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
@@ -84,7 +80,6 @@ export default function Home() {
               있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
               정확하게 정보를 수집할 수 있게 합니다.
             </p>
-
             <p>
               따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
               방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
@@ -93,6 +88,141 @@ export default function Home() {
               왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
               하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
               중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
+      {
+        text: "모델 로그 열기",
+        icon: <IconLog width={35} fill="#000"></IconLog>,
+        desription: (
+          <div className="space-y-4 leading-loose">
+            <h1 className="font-bold">
+              ASR(Auto Speech Recognition) 음성 인식과 도청으로의 활용가능성
+            </h1>
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
+              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
+              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
+              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
+              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
+              다양한 분야에서 널리 사용되고 있습니다.
+            </p>
+            <p>
+              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
+              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
+              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
+              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
+              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
+              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
+              정확하게 정보를 수집할 수 있게 합니다.
+            </p>
+            <p>
+              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
+              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
+              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
+              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
+              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
+              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
+              중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
+      {
+        text: "카워드 방어 설정",
+        icon: <IconKeyword width={35} fill="#000"></IconKeyword>,
+        desription: (
+          <div className="space-y-4 leading-loose">
+            <h1 className="font-bold">
+              ASR(Auto Speech Recognition) 음성 인식과 도청으로의 활용가능성
+            </h1>
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
+              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
+              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
+              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
+              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
+              다양한 분야에서 널리 사용되고 있습니다.
+            </p>
+            <p>
+              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
+              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
+              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
+              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
+              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
+              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
+              정확하게 정보를 수집할 수 있게 합니다.
+            </p>
+            <p>
+              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
+              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
+              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
+              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
+              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
+              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
+              중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
+      {
+        text: "문제점 신고",
+        icon: <IconEmail width={35} fill="#000"></IconEmail>,
+        desription: (
+          <div className="space-y-4 leading-loose">
+            <h1 className="font-bold">
+              ASR(Auto Speech Recognition) 음성 인식과 도청으로의 활용가능성
+            </h1>
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
+              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
+              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
+              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
+              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
+              다양한 분야에서 널리 사용되고 있습니다.
+            </p>
+            <p>
+              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
+              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
+              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
+              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
+              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
+              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
+              정확하게 정보를 수집할 수 있게 합니다.
+            </p>
+            <p>
+              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
+              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
+              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
+              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
+              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
+              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
+              중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
+    ],
+  });
+  const [modalOption, setModalOption] = useState({
+    isTutorialOpen: true,
+    tutorialContentIndex: 0,
+    tutorialContent: [
+      {
+        title: "튜토리얼 시작",
+        desription: (
+          <div className="space-y-4 leading-loose">
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
             </p>
           </div>
         ),
@@ -101,37 +231,10 @@ export default function Home() {
       {
         title: "도청 방지 모델!",
         desription: (
-          <div>
-            <h1>ASR 음성 인식과 도청 활용 방법 튜토리얼</h1>
-
+          <div className="space-y-4 leading-loose">
             <p>
               자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
               텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
-              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
-              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
-              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
-              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
-              다양한 분야에서 널리 사용되고 있습니다.
-            </p>
-
-            <p>
-              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
-              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
-              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
-              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
-              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
-              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
-              정확하게 정보를 수집할 수 있게 합니다.
-            </p>
-
-            <p>
-              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
-              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
-              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
-              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
-              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
-              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
-              중요한 역할을 할 수 있습니다.
             </p>
           </div>
         ),
@@ -140,37 +243,10 @@ export default function Home() {
       {
         title: "부가 기능!",
         desription: (
-          <div>
-            <h1>ASR 음성 인식과 도청 활용 방법 튜토리얼</h1>
-
+          <div className="space-y-4 leading-loose">
             <p>
               자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
               텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
-              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
-              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
-              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
-              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
-              다양한 분야에서 널리 사용되고 있습니다.
-            </p>
-
-            <p>
-              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
-              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
-              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
-              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
-              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
-              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
-              정확하게 정보를 수집할 수 있게 합니다.
-            </p>
-
-            <p>
-              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
-              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
-              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
-              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
-              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
-              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
-              중요한 역할을 할 수 있습니다.
             </p>
           </div>
         ),
@@ -179,37 +255,22 @@ export default function Home() {
       {
         title: "통계 요약!",
         desription: (
-          <div>
-            <h1>ASR 음성 인식과 도청 활용 방법 튜토리얼</h1>
-
+          <div className="space-y-4 leading-loose">
             <p>
               자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
               텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
-              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
-              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
-              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
-              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
-              다양한 분야에서 널리 사용되고 있습니다.
             </p>
-
+          </div>
+        ),
+        image: "",
+      },
+      {
+        title: "튜토리얼 종료",
+        desription: (
+          <div className="space-y-4 leading-loose">
             <p>
-              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
-              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
-              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
-              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
-              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
-              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
-              정확하게 정보를 수집할 수 있게 합니다.
-            </p>
-
-            <p>
-              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
-              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
-              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
-              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
-              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
-              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
-              중요한 역할을 할 수 있습니다.
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
             </p>
           </div>
         ),
@@ -420,28 +481,7 @@ export default function Home() {
                 >
                   <div>
                     <div className="flex flex-col gap-4 w-full items-center overflow-y-scroll">
-                      {[
-                        {
-                          text: "음성 보안 이해",
-                          icon: (
-                            <IconManual width={35} fill="#000"></IconManual>
-                          ),
-                        },
-                        {
-                          text: "모델 로그 열기",
-                          icon: <IconLog width={35} fill="#000"></IconLog>,
-                        },
-                        {
-                          text: "카워드 방어 설정",
-                          icon: (
-                            <IconKeyword width={35} fill="#000"></IconKeyword>
-                          ),
-                        },
-                        {
-                          text: "문제점 신고",
-                          icon: <IconEmail width={35} fill="#000"></IconEmail>,
-                        },
-                      ].map((e, i) => {
+                      {buttonOption.buttonContent.map((e: any, i: number) => {
                         return (
                           <Button
                             key={i}
@@ -452,6 +492,7 @@ export default function Home() {
                             onPress={() => {
                               setModalOption({
                                 ...modalOption,
+
                                 isModalOpen: true,
                                 buttonSelected: e.text,
                               });
@@ -531,19 +572,14 @@ export default function Home() {
         placement={"bottom"}
         scrollBehavior={"inside"}
       >
-        <ModalContent>
+        <ModalContent className="pb-6">
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
                 {modalOption.buttonSelected}
               </ModalHeader>
-              <ModalBody>
-                {
-                  modalOption.tutorialContent[modalOption.tutorialContentIndex]
-                    .desription
-                }
-              </ModalBody>
-              <ModalFooter>
+              <ModalBody>{buttonOption.buttonContent[0].desription}</ModalBody>
+              <ModalFooter className="w-full flex flex-row items-stretch justify-center">
                 <Button
                   color="danger"
                   variant="light"
@@ -563,7 +599,7 @@ export default function Home() {
         </ModalContent>
       </Modal>
       <Modal isOpen={modalOption.isTutorialOpen} placement={"bottom"}>
-        <ModalContent>
+        <ModalContent className="pb-6">
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
@@ -573,13 +609,12 @@ export default function Home() {
                 }
               </ModalHeader>
               <ModalBody>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
+                {
+                  modalOption.tutorialContent[modalOption.tutorialContentIndex]
+                    .desription
+                }
               </ModalBody>
-              <ModalFooter className="pb-4">
+              <ModalFooter className="w-full flex flex-row items-stretch justify-center">
                 <Button
                   color="danger"
                   variant="light"
@@ -631,6 +666,7 @@ export default function Home() {
                     modalOption.tutorialContent.length - 1
                   }
                   size={"sm"}
+                  variant={"light"}
                 >
                   {modalOption.tutorialContentIndex !=
                   modalOption.tutorialContent.length - 1
