@@ -57,10 +57,164 @@ export default function Home() {
     isTutorialOpen: true,
     tutorialContentIndex: 0,
     tutorialContent: [
-      { title: "안녕하세요!", desription: "", image: "" },
-      { title: "도청 방지 모델!", desription: "", image: "" },
-      { title: "부가 기능!", desription: "", image: "" },
-      { title: "통계 요약!", desription: "", image: "" },
+      {
+        title: "안녕하세요!",
+        desription: (
+          <div className="gap-y-8 flex flex-col h-full leading-loose">
+            <h1 className="font-bold">
+              ASR 음성 인식과 도청 활용 방법 튜토리얼
+            </h1>
+
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
+              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
+              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
+              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
+              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
+              다양한 분야에서 널리 사용되고 있습니다.
+            </p>
+
+            <p>
+              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
+              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
+              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
+              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
+              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
+              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
+              정확하게 정보를 수집할 수 있게 합니다.
+            </p>
+
+            <p>
+              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
+              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
+              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
+              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
+              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
+              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
+              중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
+      {
+        title: "도청 방지 모델!",
+        desription: (
+          <div>
+            <h1>ASR 음성 인식과 도청 활용 방법 튜토리얼</h1>
+
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
+              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
+              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
+              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
+              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
+              다양한 분야에서 널리 사용되고 있습니다.
+            </p>
+
+            <p>
+              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
+              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
+              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
+              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
+              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
+              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
+              정확하게 정보를 수집할 수 있게 합니다.
+            </p>
+
+            <p>
+              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
+              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
+              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
+              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
+              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
+              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
+              중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
+      {
+        title: "부가 기능!",
+        desription: (
+          <div>
+            <h1>ASR 음성 인식과 도청 활용 방법 튜토리얼</h1>
+
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
+              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
+              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
+              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
+              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
+              다양한 분야에서 널리 사용되고 있습니다.
+            </p>
+
+            <p>
+              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
+              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
+              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
+              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
+              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
+              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
+              정확하게 정보를 수집할 수 있게 합니다.
+            </p>
+
+            <p>
+              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
+              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
+              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
+              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
+              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
+              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
+              중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
+      {
+        title: "통계 요약!",
+        desription: (
+          <div>
+            <h1>ASR 음성 인식과 도청 활용 방법 튜토리얼</h1>
+
+            <p>
+              자동 음성 인식(ASR, Automatic Speech Recognition)은 음성을
+              텍스트로 변환하는 기술입니다. 이 기술은 마이크로폰으로 수집된 음성
+              데이터를 컴퓨터가 이해할 수 있는 텍스트로 변환합니다. ASR 시스템은
+              딥러닝 알고리즘을 활용해 음향 신호를 분석하고, 이를 텍스트로
+              변환하는 과정에서 언어 모델과 발음 사전을 사용합니다. 이러한
+              기술은 스마트폰의 음성 비서, 자막 생성, 고객 서비스 자동화 등
+              다양한 분야에서 널리 사용되고 있습니다.
+            </p>
+
+            <p>
+              ASR 기술은 도청에도 활용될 수 있습니다. 도청의 목적은 특정 대화
+              내용을 파악하는 것으로, ASR 기술을 이용하면 수집된 음성 데이터를
+              실시간으로 텍스트로 변환하여 보다 효율적으로 분석할 수 있습니다.
+              예를 들어, 도청 장치를 통해 수집된 음성 데이터를 ASR 시스템에
+              입력하면, 실시간으로 텍스트가 생성되어 대화 내용을 즉시 확인할 수
+              있습니다. 이는 사람이 직접 듣고 분석하는 것보다 훨씬 빠르고
+              정확하게 정보를 수집할 수 있게 합니다.
+            </p>
+
+            <p>
+              따라서 ASR 기술은 도청을 더욱 정교하게 만들 수 있지만, 이를
+              방지하기 위한 기술도 중요합니다. 딥러닝 기반 실시간 음성 위장
+              체계는 이러한 도청을 교란하는 방법으로, ASR 시스템이 올바르게
+              인식하지 못하도록 음성 신호를 변형합니다. 이는 음성 데이터를
+              왜곡하거나 특정 소음을 추가하여 도청자가 정확한 정보를 얻지 못하게
+              하는 방법입니다. 이러한 기술은 개인 정보 보호와 보안에 있어서
+              중요한 역할을 할 수 있습니다.
+            </p>
+          </div>
+        ),
+        image: "",
+      },
     ],
     isModalOpen: false,
     buttonSelected: "",
@@ -120,6 +274,7 @@ export default function Home() {
                   placement={"bottom"}
                   color={"primary"}
                   size={"lg"}
+                  className="max-w-[150px]"
                 >
                   <Button
                     ref={buttonRef}
@@ -222,6 +377,7 @@ export default function Home() {
                     ],
                   }}
                   options={{
+                    spanGaps: 20,
                     maintainAspectRatio: false,
                     responsive: true,
                     animation: {
@@ -256,6 +412,7 @@ export default function Home() {
                       placement={"bottom"}
                       color={"primary"}
                       size={"lg"}
+                      className="max-w-[150px]"
                     >
                       <p>부가 기능</p>
                     </Tooltip>
@@ -324,6 +481,7 @@ export default function Home() {
                       placement={"bottom"}
                       color={"primary"}
                       size={"lg"}
+                      className="max-w-[150px]"
                     >
                       <p>통계 요약</p>
                     </Tooltip>
@@ -342,7 +500,7 @@ export default function Home() {
                       return (
                         <div
                           key={i}
-                          className="flex flex-row w-full justify-between items-center h-[30px]"
+                          className="flex flex-row w-full justify-between items-center h-[20px]"
                         >
                           <p
                             key={i}
@@ -371,6 +529,7 @@ export default function Home() {
         isOpen={modalOption.isModalOpen}
         size={mobile ? "full" : "2xl"}
         placement={"bottom"}
+        scrollBehavior={"inside"}
       >
         <ModalContent>
           {(onClose) => (
@@ -379,24 +538,10 @@ export default function Home() {
                 {modalOption.buttonSelected}
               </ModalHeader>
               <ModalBody>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Magna exercitation reprehenderit magna aute tempor cupidatat
-                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                  aliqua enim laboris do dolor eiusmod. Et mollit incididunt
-                  nisi consectetur esse laborum eiusmod pariatur proident Lorem
-                  eiusmod et. Culpa deserunt nostrud ad veniam.
-                </p>
+                {
+                  modalOption.tutorialContent[modalOption.tutorialContentIndex]
+                    .desription
+                }
               </ModalBody>
               <ModalFooter>
                 <Button
@@ -405,12 +550,13 @@ export default function Home() {
                   onPress={() => {
                     setModalOption({ ...modalOption, isModalOpen: false });
                   }}
+                  size={"sm"}
                 >
-                  Close
+                  돌아가기
                 </Button>
-                <Button color="primary" onPress={onClose}>
+                {/* <Button color="primary" onPress={onClose} size={"sm"}>
                   Action
-                </Button>
+                </Button> */}
               </ModalFooter>
             </>
           )}
@@ -433,7 +579,7 @@ export default function Home() {
                   Pellentesque sit amet hendrerit risus, sed porttitor quam.
                 </p>
               </ModalBody>
-              <ModalFooter>
+              <ModalFooter className="pb-4">
                 <Button
                   color="danger"
                   variant="light"
@@ -447,6 +593,7 @@ export default function Home() {
                     }
                   }}
                   disabled={modalOption.tutorialContentIndex == 0}
+                  size={"sm"}
                 >
                   이전으로
                 </Button>
@@ -454,9 +601,9 @@ export default function Home() {
                   color={"default"}
                   variant="light"
                   onPress={() => {
-                    setModalOption({ ...modalOption, isModalOpen: false });
+                    setModalOption({ ...modalOption, isTutorialOpen: false });
                   }}
-                  disabled={modalOption.tutorialContentIndex == 0}
+                  size={"sm"}
                 >
                   넘어가기
                 </Button>
@@ -483,6 +630,7 @@ export default function Home() {
                     modalOption.tutorialContentIndex ==
                     modalOption.tutorialContent.length - 1
                   }
+                  size={"sm"}
                 >
                   {modalOption.tutorialContentIndex !=
                   modalOption.tutorialContent.length - 1
