@@ -308,23 +308,12 @@ export default function Home() {
     <>
       <section className="h-screen w-full select-none flex-col justify-start items-center relative">
         <div
-          className={`flex h-full w-full flex-col items-center justify-start gap-2 pb-6 pt-2 px-4 max-w-[600px] mx-auto`}
+          className={`flex h-full w-full flex-col items-center justify-start gap-2 pb-6 pt-2 px-4 max-w-[400px] mx-auto`}
         >
           <Header></Header>
-          <div className="w-full h-full grid-cols-1 grid-rows-5 grid gap-y-8">
+          <div className="w-full h-full flex flex-col gap-y-8">
             {selected == "부가 기능" ? (
-              <div className="flex flex-col justify-between row-span-2 items-center">
-                {/* <div className="w-full h-[50px]">
-                  {buttonOption.isModelActivated && (
-                    <AudioVisualizer
-                      mode={"wave"}
-                      height="50px"
-                      width="100%"
-                      bgColor="#fff"
-                      barColor="#005BC4"
-                    />
-                  )}
-                </div> */}
+              <div className="flex flex-col justify-between row-span-2 items-center aspect-[4/3]">
                 <Tooltip
                   content={"AI 도청 방지 모델을 동작하는 버튼입니다."}
                   showArrow
@@ -342,7 +331,7 @@ export default function Home() {
                     // disableAnimation={true}
                     radius={"none"}
                     fullWidth
-                    className={`w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative ${
+                    className={`w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative aspect-[4/3] ${
                       buttonOption.isModelActivated ? "" : "bg-red-50"
                     }`}
                     color={
@@ -413,7 +402,7 @@ export default function Home() {
                 </Tooltip>
               </div>
             ) : (
-              <div className="flex h-full w-full row-span-2">
+              <div className="flex h-fit w-full row-span-2 aspect-[4/3] max-h-[300px]">
                 <Line
                   data={{
                     labels: [1, 2, 3, 4, 5],
