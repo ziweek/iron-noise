@@ -32,7 +32,7 @@ const config: Config = {
       },
     },
   },
-  // darkMode: "class",
+  darkMode: "class",
   plugins: [
     require("tailwind-scrollbar-hide"),
     nextui({

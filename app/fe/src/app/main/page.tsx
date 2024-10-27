@@ -17,7 +17,6 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import toast, { Toaster } from "react-hot-toast";
-import { AudioVisualizer } from "ts-audio-visualizer";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -44,6 +43,7 @@ ChartJS.register(
   LineElement,
   Filler
 );
+import { Visualizer } from "react-sound-visualizer";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -280,6 +280,40 @@ export default function Home() {
     isModalOpen: false,
     buttonSelected: "",
   });
+  const [isMicOn, setIsMicOn] = useState<boolean>(false);
+  const [audio, setAudio] = useState<MediaStream | null>(null);
+
+  // useEffect(() => {
+  //   navigator.mediaDevices
+  //     .getUserMedia({
+  //       audio: true,
+  //       video: false,
+  //     })
+  //     .then(setAudio);
+  // }, []);
+
+  // const [isMicOn, setIsMicOn] = useState<boolean>(false);
+  // const [mediaStream, setMediaStream] = useState<MediaStream | null>(null);
+
+  const handleMicOn = async (): Promise<void> => {
+    try {
+      const stream: MediaStream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+      });
+      setAudio(stream);
+      setIsMicOn(true);
+    } catch (error) {
+      console.error("Error accessing the microphone:", error);
+    }
+  };
+
+  const handleMicOff = (): void => {
+    if (audio) {
+      audio.getTracks().forEach((track) => track.stop());
+      setAudio(null);
+      setIsMicOn(false);
+    }
+  };
 
   const queryButtonOption = useQuery<any>({
     queryKey: ["buttonOption"],
@@ -326,79 +360,86 @@ export default function Home() {
                   size={"lg"}
                   className="max-w-[150px]"
                 >
-                  <Button
-                    ref={buttonRef}
-                    // disableAnimation={true}
-                    radius={"none"}
-                    fullWidth
-                    className={`w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative aspect-[4/3] ${
-                      buttonOption.isModelActivated ? "" : "bg-red-50"
-                    }`}
-                    color={
-                      buttonOption.isModelActivated ? "primary" : "default"
-                    }
-                    variant={buttonOption.isModelActivated ? "shadow" : "flat"}
-                    onClick={async () => {
-                      console.log(buttonRef.current);
-                      await setButtonOption({
-                        ...buttonOption,
-                        isModelActivated: !buttonOption.isModelActivated,
-                      });
-                      await queryButtonOption.refetch();
-                    }}
-                  >
-                    <div className="flex flex-col items-center relative justify-center">
-                      {/* <div className="z-0 fixed top-4 rounded-lg overflow-clip -rotate-180">
-                      {buttonOption.isModelActivated && (
-                        <AudioVisualizer
-                          mode={"bars"}
-                          height="30px"
-                          width="100%"
-                          bgColor="#005BC4"
-                          barColor="#D1F4E0"
-                        />
-                      )}
-                    </div> */}
-                      <div
-                        className={`h-[150px] flex  flex-col justify-center overflow-y-clip`}
-                      >
-                        {buttonOption.isModelActivated ? (
-                          <LottieSecurityCheck
-                            width={200}
-                            height={200}
-                            color="blue"
-                            play
-                            loop
-                          ></LottieSecurityCheck>
-                        ) : (
-                          <LottieSecurityCheck
-                            width={200}
-                            height={200}
-                            color="red"
-                          ></LottieSecurityCheck>
-                        )}
-                      </div>
-                      <div className="flex flex-col z-50">
-                        <p className="text-md">AI 도청 방지 모델</p>
-                        <p className="text-lg">
-                          {buttonOption.isModelActivated
-                            ? "동작 중"
-                            : "꺼져 있음"}
-                        </p>
-                      </div>
-                      <div className="absolute -bottom-4 z-0 rounded-sm overflow-clip">
-                        {buttonOption.isModelActivated && (
-                          <AudioVisualizer
-                            mode={"bars"}
-                            height="30px"
-                            width="100%"
-                            bgColor="#005BC4"
-                            barColor="#fff"
-                          />
-                        )}
-                      </div>
-                    </div>
-                  </Button>
+                  <Visualizer audio={audio} autoStart strokeColor="#ffffff50">
+                    {({ canvasRef, stop, start, reset }) => (
+                      <>
+                        <Button
+                          ref={buttonRef}
+                          // disableAnimation={true}
+                          radius={"none"}
+                          fullWidth
+                          className={`w-full font-bold col-span-2 h-full drop-shadow-md p-0 relative aspect-[4/3] ${
+                            buttonOption.isModelActivated ? "" : "bg-red-50"
+                          }`}
+                          color={
+                            buttonOption.isModelActivated
+                              ? "primary"
+                              : "default"
+                          }
+                          variant={
+                            buttonOption.isModelActivated ? "shadow" : "flat"
+                          }
+                          onClick={async () => {
+                            console.log(buttonRef.current);
+                            if (buttonOption.isModelActivated) {
+                              handleMicOff();
+                            } else {
+                              handleMicOn();
+                            }
+
+                            await setButtonOption({
+                              ...buttonOption,
+                              isModelActivated: !buttonOption.isModelActivated,
+                            });
+                            await queryButtonOption.refetch();
+                          }}
+                        >
+                          <div className="flex flex-col items-center relative justify-center">
+                            <div
+                              className={`h-[150px] flex  flex-col justify-center overflow-y-clip`}
+                            >
+                              {buttonOption.isModelActivated ? (
+                                <LottieSecurityCheck
+                                  width={200}
+                                  height={200}
+                                  color="blue"
+                                  play
+                                  loop
+                                ></LottieSecurityCheck>
+                              ) : (
+                                <LottieSecurityCheck
+                                  width={200}
+                                  height={200}
+                                  color="red"
+                                ></LottieSecurityCheck>
+                              )}
+                            </div>
+                            <div className="flex flex-col z-50">
+                              <p className="text-md">AI 도청 방지 모델</p>
+                              <p className="text-lg">
+                                {buttonOption.isModelActivated
+                                  ? "동작 중"
+                                  : "꺼져 있음"}
+                              </p>
+                            </div>
+                            <div className="absolute -bottom-4 z-0 rounded-sm overflow-clip">
+                              {buttonOption.isModelActivated ? (
+                                <div className="z-50 flex w-full h-full">
+                                  <canvas
+                                    ref={canvasRef}
+                                    width={500}
+                                    height={100}
+                                  />
+                                </div>
+                              ) : (
+                                <></>
+                              )}
+                            </div>
+                          </div>
+                        </Button>
+                      </>
+                    )}
+                  </Visualizer>
                 </Tooltip>
               </div>
             ) : (

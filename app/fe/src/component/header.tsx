@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button, Chip } from "@nextui-org/react";
 import { IconGithub, IconLinkedIn, IconLogo } from "./common/icons";
 import { LottieSecurityCheck } from "./common/lotties";
 import { useQuery } from "@tanstack/react-query";
@@ -15,27 +15,18 @@ export default function Header(props: any) {
       className={`top-0 z-50 h-[40px] w-full ${props.isFixed ? "" : ""}`}
     >
       <div className="flex h-[40px] w-full select-none flex-row gap-1 justify-between items-center">
-        <div className="flex flex-row">
-          <div
-            className={`h-[40px] w-[30px] flex flex-col justify-center overflow-x-clip`}
-          >
-            {queryButtonOption.data?.isModelActivated ? (
-              <LottieSecurityCheck
-                width={40}
-                height={40}
-                color="blue"
-                play
-                loop
-              ></LottieSecurityCheck>
-            ) : (
-              <LottieSecurityCheck
-                width={40}
-                height={40}
-                color="red"
-              ></LottieSecurityCheck>
-            )}
-          </div>
+        <div className="flex flex-row space-x-2">
           <IconLogo fill="#000" width={100}></IconLogo>
+          {queryButtonOption.data?.isModelActivated ? (
+            <Chip color="primary" radius={"sm"}>
+              동작 중
+            </Chip>
+          ) : (
+            <></>
+          )}
+          <div
+          // className={`h-[40px] w-[40px] flex flex-col justify-center overflow-x-clip`}
+          ></div>
         </div>
         <div className="flex h-fit flex-row gap-2">
           <Button

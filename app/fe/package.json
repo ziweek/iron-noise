@@ -31,6 +31,7 @@
     "react-hot-toast": "^2.4.1",
     "react-lottie-player": "^2.0.0",
     "react-responsive": "^10.0.0",
+    "react-sound-visualizer": "^1.1.1",
     "tailwind-scrollbar-hide": "^1.1.7",
     "ts-audio-visualizer": "^1.0.4",
     "wavesurfer.js": "^7.8.2"
