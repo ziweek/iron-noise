@@ -105,23 +105,23 @@ export default function RootLayout({
         />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://yourdomain.com" />
-        <meta name="twitter:title" content="PWA App" />
-        <meta name="twitter:description" content="Best PWA App in the world" />
+        <meta name="twitter:url" content="https://iron-noise.vercel.app/" />
+        <meta name="twitter:title" content="아이언노이즈" />
         <meta
-          name="twitter:image"
-          content="https://yourdomain.com/icons/android-chrome-192x192.png"
+          name="twitter:description"
+          content="인공지능 도청을 교란하는, 딥러닝 기반 실시간 음성 위장 체계"
         />
+        <meta name="twitter:image" content="https://iron-noise.vercel.app/" />
         <meta name="twitter:creator" content="@DavidWShadow" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="PWA App" />
-        <meta property="og:description" content="Best PWA App in the world" />
-        <meta property="og:site_name" content="PWA App" />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:title" content="아이언노이즈" />
         <meta
-          property="og:image"
-          content="https://yourdomain.com/icons/apple-touch-icon.png"
+          property="og:description"
+          content="인공지능 도청을 교란하는, 딥러닝 기반 실시간 음성 위장 체계"
         />
+        <meta property="og:site_name" content="아이언노이즈" />
+        <meta property="og:url" content="https://iron-noise.vercel.app/" />
+        <meta property="og:image" content="https://iron-noise.vercel.app" />
       </head>
       <body>
         <AppProvider>{children}</AppProvider>
