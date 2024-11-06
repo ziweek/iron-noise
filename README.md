@@ -1,5 +1,3 @@
-# 안녕, 철벽소리
-
 <img src="./src/banner_ko.png"/>
 
 <p align="center">
@@ -52,18 +50,14 @@
   <strong>아래의 뱃지에서 소재자료와 프로토타입을 확인해보세요.<strong>
   <br/>
   <br/>
-  <a href='https://www.canva.com/design/DAF6gh68bZ4/YeS-FN9gsbZpPdRnq52BXQ/view?utm_content=DAF6gh68bZ4&utm_campaign=designshare&utm_medium=link&utm_source=editor'>
-    <img src="https://img.shields.io/badge/소개자료-Canva-00C4CC?style=flat-square"/>
-  </a>
-    <br/>
-  <a href='https://desirable-sea.vercel.app/'>
+  <a href='https://iron-noise.vercel.app/'>
     <img src="https://img.shields.io/badge/프로덕트-Vercel-000000?style=flat-square"/>
   </a>
   <a href='https://goor.me/edkv2g6bKZt7nopy6'>
     <img src="https://img.shields.io/badge/모델%20시연-HuggingFace-FFD21E?style=flat-square"/>
   </a>
     <br/>
-  <a href='https://colab.research.google.com/drive/11qoO4fd5s9l_FnF8a1dCT6uK3tWLSlt2?usp=sharing'>
+  <a href='https://colab.research.google.com/drive/1ysSkpS1vuK5xsW9PE0ojAfXzCzRB_3ou?usp=sharing'>
     <img src="https://img.shields.io/badge/튜토리얼-Google%20Colab-F9AB00?style=flat-square"/>
   </a>
   <a href='https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=132'>
@@ -73,6 +67,8 @@
 
 <br/>
 <br/>
+
+<!--
 
 > [!NOTE]
 > - 본 아이디어는, 육군본부에서 주최하는 [제3회 육군 인공지능 아이디어 공모전](https://aifactory.space/task/2700/overview)에 출품한 프로젝트입니다.
@@ -122,7 +118,10 @@
 ## How to use
 
 ```sh
+```
 
+
+-->
 ```
 
 ```sh
