@@ -215,7 +215,7 @@ export default function Home() {
                   "최근 인공지능 기반의 음성인식 기술(ASR: Automatic  Speech Recognition)이 발전하며 도청 기술 또한 고도화되고 있음.",
                 tappedTitle:
                   "적대적 공격과 예측적 공격을 결합한 딥러닝 기반 실시간 음성 위장 체계를 통해 AI 음성인식 모델을 교란하여 도청 시도 차단",
-                bgImg: "/image/background-pattern.jpg",
+                bgImg: "/image/bg-radio.jpg",
               },
               {
                 keyword: "스마트 장비의 보급 확대",
@@ -223,7 +223,7 @@ export default function Home() {
                   "스마트 장비(스마트폰 등)의 보급으로 인해 음성 정보 유출 위험에 더 쉽게 노출되고 있으며, 해킹과 결합되어 정보 도청 시도가 증가하고 있음",
                 tappedTitle:
                   "실시간 음성위장 딥러닝 모델은 기존 군사장비의 네트워크 암호화 기술과 결합 보안성을 한층 강화할 수 있는 체계를 구축",
-                bgImg: "/image/background-pattern.jpg",
+                bgImg: "/image/bg-smart.jpg",
               },
             ].map((content, i) => {
               return (
@@ -249,7 +249,7 @@ export default function Home() {
                   }}
                   style={{
                     backgroundColor:
-                      i == indexOfPressedCard ? "#00000099" : "#00000025",
+                      i == indexOfPressedCard ? "#00000099" : "#00000075",
                     backgroundImage:
                       i == indexOfPressedCard
                         ? `url('${content.bgImg}`

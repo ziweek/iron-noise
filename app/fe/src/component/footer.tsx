@@ -20,7 +20,7 @@ export default function Footer(props: any) {
             variant={"light"}
             size={"sm"}
             onPress={() => {
-              window.open("https://github.com/ziweek");
+              window.open("https://github.com/ziweek/iron-noise");
             }}
           >
             <IconGithub fill="#1D4A83" width={"20px"}></IconGithub>
