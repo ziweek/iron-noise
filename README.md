@@ -35,7 +35,7 @@
 <br/>
   
 <p align="center">  
-  <strong>아래의 뱃지에서 소재자료와 프로토타입을 확인해보세요.<strong>
+  <strong>Let's try the product from below badge link<strong>
   <br/>
   <br/>
   <a href='https://iron-noise.vercel.app/'>
@@ -73,7 +73,7 @@ https://github.com/user-attachments/assets/2def17e0-46ea-4561-8b50-fc78d595b88b
   </tr>
   <tr>
     <td style="width:1/2;">
-      <img src="./src/mobile.png"/>
+      <img src="./src/app-design.png"/>
     </td>
     <td style="width:1/2;">
       <img src="./src/3d-printing.png"/>
