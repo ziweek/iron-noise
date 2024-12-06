@@ -21,7 +21,7 @@
     <img src="https://img.shields.io/badge/Paperswithcode-Real%20Time%20Neural%20Voice%20Camouflage-25c2a0?style=flat-square"/>
   </a>
   <br/>
-
+  <br/>
   <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
   <img src="https://img.shields.io/badge/PWA-5A0FC8?style=flat-square&logo=pwa&logoColor=white"/> 
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
@@ -51,7 +51,6 @@
 
 <br/>
 <br/>
-
 
 # 1. 개요
 
@@ -138,6 +137,5 @@ Utilized Docker Compose to containerize the backend and frontend services, ensur
 # Contribution
 
 <a href="https://github.com/ziweek/award-factory/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ziweek/award-factory" />
+  <img src="https://contrib.rocks/image?repo=ziweek/iron-noise" />
 </a>
-
